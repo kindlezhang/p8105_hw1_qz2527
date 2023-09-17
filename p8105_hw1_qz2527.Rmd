@@ -8,6 +8,7 @@ output: html_document
 ## Problem 1
 
 ```{r setup, include = FALSE}
+library(tidyverse)
 library(moderndive)
 ```
 
@@ -33,7 +34,20 @@ the size of the data set is `r data_row` rows and `r data_col` columns
 
 the mean temputure is `r mean_temp`
 
+3. plot 
 
+make a data table first and use `ggplot` to plot the image
+
+```{r plot scatter}
+my_plot = tibble(
+  x = early_january_weather$time_hour,
+  y = early_january_weather$temp,
+  humid = early_january_weather$humid
+)
+ggplot(my_plot, aes(x = x, y = y, group = humid)) + geom_point(aes(color = humid, size = 5))
+
+ggsave("hw1_plot_1.png")
+```
 
 
 
