@@ -2,7 +2,11 @@
 title: "p8105_hw1_qz2527"
 author: "kindle zhang"
 date: "2023-09-16"
-output: github_document
+output: 
+  html_document:
+    toc : true
+    toc_float : true
+    code_folding : show
 ---
 
 ## Problem 1
