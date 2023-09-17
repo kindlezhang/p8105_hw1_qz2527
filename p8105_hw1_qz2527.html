@@ -448,7 +448,7 @@ mean_cv = mean(pull(my_data_2, cha_vec))</code></pre>
 ## 参数不是数值也不是逻辑值：回覆NA</code></pre>
 <ul>
 <li>we can find the mean of numeric and logical variable exists,which
-are 0.3401809 and 0.7 but the mean of factor and character don’t
+are -0.1508367 and 0.6 but the mean of factor and character don’t
 exist.</li>
 </ul>
 <p>the mean of the logical variable is the <em>proportion</em> of “True”
@@ -456,14 +456,16 @@ in total samples</p>
 <pre class="r"><code>mean_lv_2 = mean(as.numeric(my_data_2$log_vec))
 mean_cv_2 = mean(as.numeric(my_data_2$cha_vec))
 mean_fv_2 = mean(as.numeric(my_data_2$fac_vec))</code></pre>
-<p>we can find the character becomes numeric variable and if they are
-absolutely numbers, they can be calculated.</p>
-<p>the “true” becomes 1 and “false” becomes 0, then it can be
-calculated.</p>
-<p>the different levels in factor sequence becomes a sequence with a
-start number 1.</p>
-<p>according to what we find above, we can explain why a mean can be
-calculated when we use a <code>as.numeric</code> function.</p>
+<ul>
+<li><p>we can find the character becomes numeric variable and if they
+are absolutely numbers, they can be calculated.</p></li>
+<li><p>the “true” becomes 1 and “false” becomes 0, then it can be
+calculated.</p></li>
+<li><p>the different levels in factor sequence becomes a sequence with a
+start number 1.</p></li>
+<li><p>according to what we find above, we can explain why a mean can be
+calculated when we use a <code>as.numeric</code> function.</p></li>
+</ul>
 </div>
 
 

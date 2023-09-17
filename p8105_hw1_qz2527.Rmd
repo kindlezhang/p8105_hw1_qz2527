@@ -82,10 +82,10 @@ mean_cv_2 = mean(as.numeric(my_data_2$cha_vec))
 mean_fv_2 = mean(as.numeric(my_data_2$fac_vec))
 ```
 
-we can find the character becomes numeric variable and if they are absolutely numbers, they can be calculated.
+* we can find the character becomes numeric variable and if they are absolutely numbers, they can be calculated.
 
-the "true" becomes 1 and "false" becomes 0, then it can be calculated.
+* the "true" becomes 1 and "false" becomes 0, then it can be calculated.
 
-the different levels in factor sequence becomes a sequence with a start number 1.
+* the different levels in factor sequence becomes a sequence with a start number 1.
 
-according to what we find above, we can explain why a mean can be calculated when we use a `as.numeric` function.
+* according to what we find above, we can explain why a mean can be calculated when we use a `as.numeric` function.
