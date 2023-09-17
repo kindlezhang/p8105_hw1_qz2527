@@ -48,10 +48,44 @@ ggplot(my_plot, aes(x = x, y = y, group = humid)) + geom_point(aes(color = humid
 
 ggsave("hw1_plot_1.png")
 ```
+## Problem 2
 
+Create a data frame comprised of:
 
+a random sample of size 10 from a standard Normal distribution
+a logical vector indicating whether elements of the sample are greater than 0
+a character vector of length 10
+a factor vector of length 10, with 3 different factor “levels”
+Try to take the mean of each variable in your dataframe. What works and what doesn’t?
 
+```{r}
+my_data_2 = tibble(
+  norm_data = rnorm(10),
+  log_vec = norm_data > 0,
+  cha_vec = c("12","22","24","123","22424","2","2424","22","24","244442"),
+  fac_vec = factor(c("M","XL","L","M","XL","L","M","XL","L","M")) 
+)
 
+mean_nd = mean(pull(my_data_2, norm_data))
+mean_lv = mean(pull(my_data_2, log_vec))
+mean_cv = mean(pull(my_data_2, cha_vec))
+mean_fv = mean(pull(my_data_2, fac_vec))
+```
 
+* we can find the mean of numeric and logical variable exists,which are `r mean_nd` and `r mean_lv` but the mean of factor and character don't exist.
 
+the mean of the logical variable is the *proportion* of "True" in total samples
 
+```{r}
+mean_lv_2 = mean(as.numeric(my_data_2$log_vec))
+mean_cv_2 = mean(as.numeric(my_data_2$cha_vec))
+mean_fv_2 = mean(as.numeric(my_data_2$fac_vec))
+```
+
+we can find the character becomes numeric variable and if they are absolutely numbers, they can be calculated.
+
+the "true" becomes 1 and "false" becomes 0, then it can be calculated.
+
+the different levels in factor sequence becomes a sequence with a start number 1.
+
+according to what we find above, we can explain why a mean can be calculated when we use a `as.numeric` function.
