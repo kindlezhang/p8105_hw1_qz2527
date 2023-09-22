@@ -27,6 +27,7 @@ data("early_january_weather")
 ```{r describe data}
 summary(early_january_weather)
 # or use head(early_january_weather)
+skimr::skim(early_january_weather)
 data_row = nrow(early_january_weather)
 data_col = ncol(early_january_weather)
 mean_temp = mean(early_january_weather$temp)
